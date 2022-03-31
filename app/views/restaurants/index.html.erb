@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="mx-auto my-3" style="width: 300px;">Restaurant List</h1>
+  <div class="container d-flex flex-wrap mx-auto justify-content-center mb-3" style="width: 1200px;">
+    <% @restaurants.each do |r| %>
+      <div class="card m-1" style="width: 16rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= r.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= r.category.capitalize %></h6>
+          <p class="card-text">Phone: <%= r.phone_number %></p>
+          <p class="card-text"><%= r.address %></p>
+          <%= link_to "See restaurant", restaurant_path(r), class: "btn btn-primary mb-1" %> <br>
+          <%= link_to "Leave a review", class: "btn btn-dark" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container m-3">
+  <h1><%= @restaurant.name %></h1>
+  <h2><%= @restaurant.category.capitalize %></h2>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.address %></p>
+  <%=  link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary mb-3" %>
+  <% @restaurant.reviews.each do |r| %>
+    <div class="card m-1" style="width: 16rem;">
+      <div class="card-body">
+        <h5 class="card-title">Rating: <%= '⭐️' * r.rating %></h5>
+        <p class="card-text"><%= r.content %></p>
+        <%= link_to "Delete review", review_path(r), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-danger"%>
+      </div>
+    </div>
+  <% end %>
+</div>

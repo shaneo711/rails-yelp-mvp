@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="mx-auto my-3" style="width: 500px; text-align: center;">Add a restaurant review</h1>
+  <div class="container mx-auto" style="width: 600px;">
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit "Submit review", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
